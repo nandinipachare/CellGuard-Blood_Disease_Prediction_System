@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 
 warnings.filterwarnings("ignore")
 
-BASE_DIR = r"C:\Users\niles"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "PR12_disease_prediction_model.pkl")
 DATA_PATH = os.path.join(BASE_DIR, "PR12_prediction_results.csv")
 
@@ -69,7 +69,7 @@ except Exception as e:
 
 # Load the original dataset to obtain valid input fields and categories.
 # Keep the model's expected input columns in their original order.
-dataset_path = os.path.join(BASE_DIR, "your_dataset.csv")
+dataset_path = os.path.join(BASE_DIR, "blood_cell_anomaly_detection.csv")
 
 if not os.path.exists(dataset_path):
     st.warning(
